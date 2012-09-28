@@ -1,4 +1,4 @@
-//Solution 5-13
+//Solution 5-15
 pathname=get_absolute_file_path('5-15_solution.sce');
 filename=pathname+filesep()+'5-15_example.sci';
 clc;

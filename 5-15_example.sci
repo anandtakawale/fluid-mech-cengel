@@ -1,5 +1,7 @@
-//Example 5-15 Head and Power Loss During Water Pumping
-Wdot_pump=20 //pump power rating [kW]
-z_2=45 //elevation of upper reservoir surface from lower reservoir surface [m]
-Vdot=0.03 //flow rate of water through pump [m^3/s]
+//Example 5-15 Pumping water from Lake to a Reservoir
+Wdot_shaft=5 //shaft power of pump [kW]
+eta_pump=72 //efficiency of pump [%]
+z_2=25 //elevation of free surface of reservoir from lake free surface [m]
+h_L=4 //irreversible head loss in piping system [m]
 rho=1000 //density of water [kg/m^3]
+g=9.81 //gravitational acceleration [m^2/s]

@@ -3,10 +3,10 @@ pathname=get_absolute_file_path('5-15_solution.sce');
 filename=pathname+filesep()+'5-15_example.sci';
 clc;
 exec(filename)
-Wdot_pump=Wdot_pump*1000; //conversion from [kW] to [W]
-mdot=rho*Vdot; //mass flow rate of water
-Edot_mechloss=Wdot_pump-mdot*g*z_2; //energy equation
-h_L=Edot_mechloss/(mdot*g); //frictional head loss
-Edot_mechloss=Edot_mechloss/1000; //conversion to [kW]
-printf("Lost mechanical power due to frction is %1.4f kW",Edot_mechloss)
-printf("\nThe irreversible head loss of the system %1.4f m",h_L);
+Wdot_shaft=Wdot_shaft*1000;
+Wdot_pump=eta_pump*Wdot_shaft/100;
+mdot=Wdot_pump/(g*(z_2+h_L)); //energy equation
+Vdot=mdot/rho;
+printf("Discharge rate of water is %1.4e m^3/s i.e %1.4f L/s",Vdot,Vdot*1000);
+deltaP=Wdot_pump/Vdot;
+printf("\nPressure difference across the pump is %1.2f kPa",deltaP/1000);

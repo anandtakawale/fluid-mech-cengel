@@ -1,6 +1,6 @@
 //Solution 5-14
-pathname=get_absolute_file_path('5-14_solution.sce')
-filename=pathname+filesep()+'5-14_example.sci'
+pathname=get_absolute_file_path('5_14_solution.sce')
+filename=pathname+filesep()+'5_14_example.sci'
 clc;
 exec(filename)
 eta_fan = eta_fan / 100;

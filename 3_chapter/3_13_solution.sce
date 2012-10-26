@@ -10,4 +10,4 @@ omega = sqrt(4 * g * (H - h_0) / R**2); //from equation for the free surface of 
 ndot = omega / (2 * %pi) * 60; //rotational speed [rpm]
 printf("Rotational speed of the container must be restricted to %1.2f rpm to avoid any spill of liquid as a result of centrifugal effect", ndot);
 z_0 = h_0 - omega^2 * R^2 / (4 * g); //height of liquid at the center [m]
-printf("\nHeight of liquid at the center is %1.2f m>0 hence our assumtion is valid", z_0);
+printf("\nHeight of liquid at the center is %1.2f m>0 hence our assumption is valid", z_0);

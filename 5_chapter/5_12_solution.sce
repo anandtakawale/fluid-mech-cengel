@@ -18,4 +18,4 @@ printf("Efficiency of pump is %1.4f percent", eta_pump);
 //(b)
 Edot_mechloss = Wdot_pumpshaft - deltaEdot_mechfluid; //energy lost
 deltaT = Edot_mechloss / (mdot * c);
-printf("\nTemperature rise of water as it flows through the pump is %1.5f degree C", deltaT);
+printf("\nTemperature rise of water as it flows through the pump is %1.3f degree C", deltaT);

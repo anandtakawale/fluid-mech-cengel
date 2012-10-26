@@ -8,4 +8,5 @@ P_atm = P_atm * 1000; //converting from [kPa] to [Pa]
 h = h / 100; //converting from [cm] to [m]
 P = P_atm + rho * g * h; //Pressure in manometer
 P = P / 1000; //converting from [Pa] to [kPa]
-printf("Absolute pressure in the tank is %1.2f kPa", P);
+//result
+printf("Absolute pressure in the tank is %1.1f kPa", P);

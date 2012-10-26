@@ -6,4 +6,5 @@ exec(datafile)
 h = h / 1000; //converting height of Hg column from [mm] to [m]
 P = rho * g * h; //Basic pressure eqaution [Pa]
 P = P / 1000;
-printf("Atmospheric pressure is %1.2f kPa", P);
+//result
+printf("Atmospheric pressure is %1.1f kPa", P);

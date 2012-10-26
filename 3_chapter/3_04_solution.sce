@@ -6,4 +6,5 @@ exec(datafile)
 P_1 = rho_0 * g * h_1; //Gauge pressure at the bottom of surface zone [Pa]
 P_2 = P_1 + rho_0 * g * 4 *H / %pi * asinh(tan( %pi * H / (4 * H))); //After integrating w.r.t depth s
 P_2 = P_2 / 1000; //conversion from [Pa] to [kPa]
-printf("Pressure at the bottom of Gradient layer is %1.2f kPa",P_2);
+//result
+printf("Pressure at the bottom of Gradient layer is %1.1f kPa",P_2);

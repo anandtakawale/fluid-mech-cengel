@@ -1,6 +1,7 @@
 //Solution 2-1
 WD=get_absolute_file_path('2_01_solution.sce')
 datafile=WD+filesep()+'2_01_example.sci'
+clc;
 exec(datafile)
 rho = P / (R * (T + 273)) //ideal gas relation
 SG=rho / rho_water //definition specific gravity

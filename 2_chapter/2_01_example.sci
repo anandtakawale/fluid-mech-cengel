@@ -1,4 +1,4 @@
-//example 2-1
+//Example 2-1 Density, Specific Gravity and Mass of Air in a Room
 l = 4 //length [m]
 b = 5 //breadth [m]
 w = 6 //width [m]

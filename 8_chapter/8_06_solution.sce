@@ -1,4 +1,4 @@
-//Solution 1-01
+//Solution 8-06
 WD=get_absolute_file_path('8_06_solution.sce');
 datafile=WD+filesep()+'8_06_example.sci';
 clc;

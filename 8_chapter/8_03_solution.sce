@@ -18,7 +18,7 @@ function [f] = colebrook(epsilon, D, Re)
 endfunction
 //unit conversions
 D = D / 100; //[cm] to [m]
-A = %pi / 4 * D**2; //cross sectional area of pipe
+A_c = %pi / 4 * D**2; //cross sectional area of pipe
 V = Vdot / A_c; //average velocity in pipe
 Re = rho * V * D / mu; //Reynold's number
 if Re > 4000 then
@@ -31,4 +31,4 @@ h_L = deltaP / rho / g;
 Wdot_pump = Vdot * deltaP;
 printf("Pressure drop in pipe is %1.2f kPa", deltaP / 1000);
 printf("\nHead loss in pipe is %1.2f m", h_L);
-printf("\nPumping power required is %1.2f W", Wdot_pump);
+printf("\nPumping power required is %1.0f W", Wdot_pump);

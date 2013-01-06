@@ -23,7 +23,7 @@ function [Z] = equations1(X)
 endfunction
 [X, v, info] = fsolve([1e-4;0.02;1;1e5], equations1);
 Vdot = X(1); f = X(2); V = X(3); Re = X(4);
-printf("Flow rate of water through shower is %f", Vdot);
+printf("Flow rate of water through shower is %1.2f L/s", Vdot * 1000);
 //(b)
 h_L3 = P_1 / (rho * g) - 1; //from energy equation between toilet flush and inlet
 K_L3 = K_Ltee + K_Lelbow_toilet + K_Lvalve_toilet + K_Lfloat;

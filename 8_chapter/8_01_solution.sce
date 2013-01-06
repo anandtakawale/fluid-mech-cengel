@@ -1,17 +1,34 @@
 //Solution 8-1
-WD=get_absolute_file_path('8-1_solution.sce');
-datafile=WD+filesep()+'8-1_example.sci';
+WD=get_absolute_file_path('8_01_solution.sce');
+datafile=WD+filesep()+'8_01_example.sci';
 exec(datafile);
-deltaP=P_1-P_2; //pressure drop in kPa
-A_c=%pi*D^2/4; //cross sectional area of pipe in m^2
-theta=theta*%pi/180; //converting theta into radians
-for i = 1:1:3
-    V = (deltaP * 1000 - rho * g * L * sin(theta(i))) * %pi * D^4 / (128 * mu * L); //flow rate for pipe inclined at an angle theta
-    printf("\nFlow rate of oil for theta=%1.0f is %1.5f m^3/s", theta(i) * 180 / %pi, V);
+R = D/2;
+r = -R:R/100:R;
+u = u_max * (1 - r**2 / R**2);
+plot(u,r);
+title("Velocity disribution", 'fontsize', 4, 'color', 'red');
+xlabel("Velocity");
+ylabel("Radial distance");
+V = u_max / 2; //average velocity
+Vdot = V * %pi * D**2 / 4;
+Re = rho * V * D / mu; //Reynolds number
+if Re < 2300 then
+    f = 64 / Re;
 end
-V_avg = V / A_c; //Maximum average velocity(Downhill case)
-Re = rho * V_avg * D / mu //Reynolds number
-printf("\nReynolds number is %1.2f", Re);
-if(Re < 2300) then
-    printf("\nHence flow is laminar");
-end
+h_L = f * L * V**2 / (2 * g * D);
+deltaP = rho * g * (z_2 - z_1 + h_L); //from energy equation
+printf("Pressure difference across pipe is %1.0f kPa", deltaP / 1000);
+Wdot_pump = Vdot * deltaP;
+printf("\nPumping power required is %1.2f kW", Wdot_pump / 1000);
+//upward inclined pipe
+deltaz = L * sin(%pi * theta_up / 180);
+deltaP_up = rho * g * (deltaz + h_L);
+Vdot_up = Wdot_pump / deltaP_up;
+red = (Vdot - Vdot_up) / Vdot * 100;
+printf("\nReduction in flow rate due to upward inclination of pipe is %1.2f percent", red);
+//downward inclined pipe
+deltaz = -L * sin(%pi * theta_down / 180);
+deltaP_down = rho * g * (deltaz + h_L);
+Vdot_down = Wdot_pump / deltaP_down;
+inc = (Vdot_down - Vdot) / Vdot * 100;
+printf("\nIncrement in flow rate due to downward inclination of pipe is %1.2f precent", inc);
